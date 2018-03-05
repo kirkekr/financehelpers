@@ -17,12 +17,7 @@
 <!-- Click the "Submit" button and the form-data will be sent to a page
  on the server called "/action_page.php". //-->
 
-<body>
-  <form id="demo" style="display:none" action="/action_page.php">
-    <input type="text" name="text_box"><br>
-    <input type="submit" value="Submit">
-  </form>
-</body>
+
 
 <script>
 function myFunction() {
@@ -37,10 +32,12 @@ function myFunction() {
 
 
 <div class="timeline">
- <div class="container left">
+ <div class="container left" id="demo" style="display:none">
    <div class="content">
-     <h2>Entry5</h2>
-     <p>20 eur</p>
+       <form action="/action_page.php">
+         <input type="text" name="text_box"><br>
+         <input type="submit" value="Submit">
+       </form>
    </div>
  </div>
  <div class="container right">
