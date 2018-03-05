@@ -1,15 +1,47 @@
+<!--
 <template>
   <require from="NavBar.html"></require>
   <NavBar router.bind="router"></NavBar>
   <router-view></router-view>
 </template>
-<!--
+//-->
+
 <link href="Timeline.css" rel="stylesheet" type="text/css" />
 <div class="topnav">
- <a href="#stats">Statistics</a>
- <a class="active" href="#timeline">Timeline</a>
+ <a href="statistics.html">Statistics</a>
+ <a class="active" href="index.html">Timeline</a>
 </div>
+
+
+<!--
 <button class="button add_new"> + </button>
+<p id="demo" style="display:none">Hello JavaScript!</p>
+//-->
+
+<button class="button add_new" onclick="myFunction()"> + </button>
+
+<!-- Click the "Submit" button and the form-data will be sent to a page
+ on the server called "/action_page.php". //-->
+
+<body>
+  <form id="demo" style="display:none" action="/action_page.php">
+    <input type="text" name="text_box"><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("demo");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+
 <div class="timeline">
  <div class="container left">
    <div class="content">
@@ -42,4 +74,3 @@
    </div>
  </div>
 </div>
-//-->
