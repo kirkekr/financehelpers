@@ -1,0 +1,17 @@
+<template>
+<require from="navbar.html"></require>
+  <navbar></navbar>
+  <br>
+	Tervist! Sissekandeid on praegu ${count}.
+
+<form id="listingform" submit.delegate="addListing()">
+	<div><label for="transactionDate">Transaction date</label>
+	<input id="transactionDate" type="text" name="transactionDate" value.bind="listingData.transactionDate"></div>
+	<div><label for="listingCategory">Category</label>
+	<input id="listingCategory" type="text" name="listingCategory" value.bind="listingData.listingCategory"></div>
+	<div><label for="listingAmount">Amount of listing</label>
+	<input id="listingAmount" type="text" name="listingAmount" value.bind="listingData.listingAmount"></div>
+	<input type="submit" name="Add listing">
+</form>
+
+</template>
