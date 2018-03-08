@@ -56,7 +56,7 @@ body {
 }
 
 /* Container around content */
-.container {
+.entrybox {
   padding: 10px 40px;
   position: relative;
   background-color: inherit;
@@ -64,7 +64,7 @@ body {
 }
 
 /* The circles on the timeline */
-.container::after {
+.entrybox::after {
   content: '';
   position: absolute;
   width: 25px;
@@ -93,7 +93,7 @@ body {
     z-index: 1;
 }
 */
-.button {
+.entrybutton {
   position: fixed;
   bottom: 20px;
   right: 10px;
@@ -112,9 +112,9 @@ body {
   z-index: 1;
 }
 
-.button:hover {background-color: #3e8e41}
+.entrybutton:hover {background-color: #3e8e41}
 
-.button:active {
+.entrybutton:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
@@ -164,7 +164,7 @@ body {
 }
 
 /* The actual content */
-.content {
+.entrycontent {
   padding: 20px 30px;
   background-color: white;
   position: relative;

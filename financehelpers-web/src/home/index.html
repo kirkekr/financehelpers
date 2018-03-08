@@ -3,10 +3,21 @@
   <navbar></navbar>
   <require from="home/Timeline.css"></require>
 
-  <button class="button add_new" onclick="myFunction()"> + </button>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("demo");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+  <button class="entrybutton" onclick="myFunction()"> + </button>
   <div class="timeline">
-    <div class="container left" id="demo" style="display:none">
-      <div class="content">
+    <div class="entrybox left" id="demo" style="display:none">
+      <div class="entrycontent">
         <form action="/action_page.php">
           <input type="text" name="text_box_title" value="Entry5"><br>
           <input type="text" name="text_box_content"><br>
@@ -14,96 +25,29 @@
         </form>
       </div>
     </div>
-    <div class="container right">
-      <div class="content">
+    <div class="entrybox right">
+      <div class="entrycontent">
         <h2>Entry4</h2>
         <p>10 eur</p>
       </div>
     </div>
-    <div class="container left">
-      <div class="content">
+    <div class="entrybox left">
+      <div class="entrycontent">
         <h2>Entry3</h2>
         <p>5 eur</p>
       </div>
     </div>
-    <div class="container right">
-      <div class="content">
+    <div class="entrybox right">
+      <div class="entrycontent">
         <h2>Entry2</h2>
         <p>7 eur</p>
       </div>
     </div>
-    <div class="container left">
-      <div class="content">
+    <div class="entrybox left">
+      <div class="entrycontent">
         <h2>Entry1</h2>
         <p>22 eur</p>
       </div>
     </div>
   </div>
 </template>
-
-<!--<require from="home/Timeline.css"> </require>-->
-
-<!--<link href="home/Timeline.css" rel="stylesheet" type="text/css" />-->
-
-
-
-<!-- Click the "Submit" button and the form-data will be sent to a page
- on the server called "/action_page.php". //-->
-<!--
-  <button class="button add_new" onclick="myFunction()"> + </button>
-<script>
-function myFunction() {
-    var x = document.getElementById("demo");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
-</script>
-
--->
-<!--
-<div class="timeline">
- <div class="container left" id="demo" style="display:none">
-   <div class="content">
-       <form action="/action_page.php">
-   <!-- <select name="Category">
-          <option value="volvo">Hobby</option>
-          <option value="saab">Income</option>
-          <option value="fiat">Food</option>
-          <option value="audi">Other</option>
-        </select> //-->
-         <input type="text" name="text_box_title" value="Entry5"><br>
-         <input type="text" name="text_box_content"><br>
-         <input type="submit" value="Submit">
-       </form>
-   </div>
- </div>
- <div class="container right">
-   <div class="content">
-     <h2>Entry4</h2>
-     <p>10 eur</p>
-   </div>
- </div>
- <div class="container left">
-   <div class="content">
-     <h2>Entry3</h2>
-     <p>5 eur</p>
-   </div>
- </div>
- <div class="container right">
-   <div class="content">
-     <h2>Entry2</h2>
-     <p>7 eur</p>
-   </div>
- </div>
- <div class="container left">
-   <div class="content">
-     <h2>Entry1</h2>
-     <p>22 eur</p>
-   </div>
- </div>
-</div>
-</body>
--->
