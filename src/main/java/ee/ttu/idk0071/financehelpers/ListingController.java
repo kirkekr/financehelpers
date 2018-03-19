@@ -16,7 +16,7 @@ public class ListingController {
 		this.listingService = listingService;
 	}
 	
-	@RequestMapping(value="/listings/add", method=RequestMethod.POST, consumes="application/json")
+	@RequestMapping(value="/listing", method=RequestMethod.POST, consumes="application/json")
 	public Listing addListing(@RequestBody Listing listing) {
 		return listingService.addListing(listing);
 	}

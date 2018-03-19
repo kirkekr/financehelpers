@@ -13,7 +13,7 @@ export class listing{
 		let client = new HttpClient();
 		
 		
-		client.fetch('http://localhost:8080/listings/add', {
+		client.fetch('http://localhost:9000/listing', {
 			'method': "POST",
 			'body': json(this.listingData)
 		})
