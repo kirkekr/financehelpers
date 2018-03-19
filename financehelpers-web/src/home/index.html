@@ -3,25 +3,14 @@
   <navbar></navbar>
   <require from="home/Timeline.css"></require>
 
-  <script>
-    function myFunction() {
-      var x = document.getElementById("demo");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-  </script>
-
-  <button class="entrybutton" onclick="myFunction()"> + </button>
+  <button class="entrybutton" click.trigger="openNew()">+ </button>
   <div class="timeline">
     <div class="entrybox left" id="demo" style="display:none">
       <div class="entrycontent">
         <form action="/action_page.php">
-          <input type="text" name="text_box_title" value="Entry5"><br>
-          <input type="text" name="text_box_content"><br>
-          <input type="submit" value="Submit">
+          <input type="text" name="text_box_title" value="Entry5" class="form-control"><br>
+          <input type="text" name="text_box_content" class="form-control"><br>
+          <input type="submit" value="Submit" class="btn btn-success">
         </form>
       </div>
     </div>
