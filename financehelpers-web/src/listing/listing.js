@@ -13,13 +13,13 @@ export class listing{
 		let client = new HttpClient();
 		
 		
-		client.fetch('http://localhost:9000/listing', {
+		client.fetch('http://localhost:8080/listing', {
 			'method': "POST",
 			'body': json(this.listingData)
 		})
 			.then(response => response.json())
 			.then(data => {
-				console.log("Server saatis" + data.listingCategory);
+				console.log("Server saatis" + " " +data.listingCategory);
 		});
 		
 		console.log("Method executed!")
