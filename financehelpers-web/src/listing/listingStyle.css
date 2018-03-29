@@ -1,0 +1,19 @@
+/*#transactionDate {
+  width:300px;
+}
+#listingAmount{
+  width: 300px;
+}
+#listingCategory{
+  width: 300px;
+}*/
+ .form-group{
+   width: 400px;
+ }
+ #listingform{
+   margin-left: 100px;
+   margin-right: auto;
+ }
+ h2{
+   margin-left: 100px;
+ }
