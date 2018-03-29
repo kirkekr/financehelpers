@@ -1,4 +1,5 @@
 import {HttpClient, json} from 'aurelia-fetch-client'
+import environment from '../environment';
 
 export class listing{
 
@@ -13,7 +14,7 @@ export class listing{
 		let client = new HttpClient();
 		
 		
-		client.fetch('http://localhost:8080/listing', {
+		client.fetch(environment.url +'listing', {
 			'method': "POST",
 			'body': json(this.listingData)
 		})
