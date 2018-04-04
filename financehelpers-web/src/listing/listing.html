@@ -1,19 +1,30 @@
 <template>
 <require from="navbar.html"></require>
+  <require from="listing/listingStyle.css"></require>
   <navbar></navbar>
   <br>
-	Tervist! Sissekandeid on praegu ${count}.
-
+<h2>Add new item</h2>
 <form id="listingform" submit.delegate="addListing()">
-	<div><label for="transactionDate">Transaction date</label>
-	<input id="transactionDate" type="text" name="transactionDate" value.bind="listingData.transactionDate"></div>
-	<div><label for="listingCategory">Category</label>
-	<input id="listingCategory" type="text" name="listingCategory" value.bind="listingData.listingCategory"></div>
-	<div><label for="listingAmount">Amount of listing</label>
-	<input id="listingAmount" type="text" name="listingAmount" value.bind="listingData.listingAmount"></div>
-	<input type="submit" name="Add listing">
+    <div class="form-group" >
+      <label for="transactionDate" class="col-form-label">Transaction date</label>
+      <input id="transactionDate" type="text" name="transactionDate" value.bind="listingData.transactionDate" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="listingCategory" class="col-form-label">Category</label>
+	    <input id="listingCategory" type="text" name="listingCategory" value.bind="listingData.listingCategory" class="form-control">
+    </div>
+	<div class="form-group">
+    <label for="listingAmount" class="col-form-label">Amount of listing</label>
+	  <input id="listingAmount" type="text" name="listingAmount" value.bind="listingData.listingAmount" class="form-control">
+  </div>
+	<input type="submit" name="Add listing" class="btn btn-success" >
 </form>
+<<<<<<< HEAD
 	<ul>
 		<li repeat.for="listing of listingList">${listing.listingCategory}</li>
 	</ul>
 </template>
+=======
+
+</template>
+>>>>>>> 65d6bfafcac9af3831dd632deb3621d5ca286c47

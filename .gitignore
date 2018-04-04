@@ -23,3 +23,5 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+/bin/
+financehelpers-web/package-lock.json
