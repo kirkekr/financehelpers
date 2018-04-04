@@ -14,28 +14,11 @@
         </form>
       </div>
     </div>
-    <div class="entrybox right">
+    <div class="entrybox right" repeat.for="listing of listingList">
       <div class="entrycontent">
-        <h2>Entry4</h2>
-        <p>10 eur</p>
-      </div>
-    </div>
-    <div class="entrybox left">
-      <div class="entrycontent">
-        <h2>Entry3</h2>
-        <p>5 eur</p>
-      </div>
-    </div>
-    <div class="entrybox right">
-      <div class="entrycontent">
-        <h2>Entry2</h2>
-        <p>7 eur</p>
-      </div>
-    </div>
-    <div class="entrybox left">
-      <div class="entrycontent">
-        <h2>Entry1</h2>
-        <p>22 eur</p>
+        <p>${listing.transactionDate}</p>
+        <h2>${listing.listingCategory}</h2>
+        <p>${listing.listingAmount}</p>      
       </div>
     </div>
   </div>

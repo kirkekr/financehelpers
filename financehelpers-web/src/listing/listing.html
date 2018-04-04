@@ -13,5 +13,7 @@
 	<input id="listingAmount" type="text" name="listingAmount" value.bind="listingData.listingAmount"></div>
 	<input type="submit" name="Add listing">
 </form>
-
+	<ul>
+		<li repeat.for="listing of listingList">${listing.listingCategory}</li>
+	</ul>
 </template>
