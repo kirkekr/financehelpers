@@ -80,7 +80,9 @@
             "main": "aurelia-testing",
             "env": "dev"
           },
-          "text"
+          "text",
+          "highcharts",
+          "jquery"
         ]
       }
     ],
