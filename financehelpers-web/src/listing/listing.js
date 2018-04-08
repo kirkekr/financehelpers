@@ -6,6 +6,8 @@ export class listing{
 	listingData = {}
 	listingList = []
 	
+	categories = ['food', 'transport', 'entertainment'];
+	
 	constructor() {
 		this.count = 0
 	}

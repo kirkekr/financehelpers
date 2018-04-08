@@ -1,5 +1,7 @@
 package ee.ttu.idk0071.financehelpers;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,7 +16,7 @@ public class Listing {
 	@Id
 	@GeneratedValue
 	long id;
-	String transactionDate;
+	Date transactionDate;
 	String listingCategory;
 	int listingAmount;
 }
