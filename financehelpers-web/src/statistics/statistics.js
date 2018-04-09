@@ -1,56 +1,52 @@
-import {bindable, inject} from "aurelia-framework";
-import {TaskQueue} from "aurelia-task-queue";
 import Highcharts from "highcharts";
-import $ from 'jquery';
-import {GraphData} from "./graphData";
 
-
-@inject(Element, TaskQueue)
 export class Statistics {
-
-  @bindable chartOptions;
-
-  constructor(element, taskQueue) {
-    Highcharts.setOptions({
-      global: {
-        useUTC: false
+  container = {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: 'pie'
+    },
+    title: {
+      text: 'Browser market shares January, 2015 to May, 2015'
+    },
+    tooltip: {
+      pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: 'pointer',
+        enabled: true,
+        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+        showInLegend: true
       }
-    });
-    this.element = element;
-    this.taskQueue = taskQueue;
-  }
-
-  chartOptionsChanged(value) {
-    let newSettings = {};
-    $.extend(true, newSettings, this.chartDefaults, value);
-    this.taskQueue.queueMicroTask(() =>
-      $(this.element).highcharts(newSettings));
-  }
+    },
+    series: [{
+      name: "ListingCategory",
+      colorByPoint: true,
+      data: [{
+        name: "Rent",
+        y: 56.33
+      }, {
+        name: "Food",
+        y: 24.03,
+        sliced: true,
+        selected: true
+      }, {
+        name: "Entertainment",
+        y: 10.38
+      }, {
+        name: "Hobby",
+        y: 4.77
+      }, {
+        name: "Utilities",
+        y: 0.91
+      }, {
+        name: "Other",
+        y: 0.2
+      }]
+    }]
+  };
 }
-/*client = new HttpClient();
-chart = new Chart();
-
-listingCategory={};
-
-constructor (){
- console.log("laen");
-}
-
-settings = {
- data: {
-   columns: []
- }
-};
-
-create() {
- this.settings.bindto = this.element;
- this.instance        = chart.generate(this.settings);
- if (this.data && this.dimensions) {
-
-   this.update();
- }
-}
-update() {
- this.instance.load(this.settings);
- console.log("update");
-}*/

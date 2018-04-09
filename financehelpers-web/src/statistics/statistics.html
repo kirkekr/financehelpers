@@ -1,12 +1,11 @@
 <template>
   <require from="navbar.html"></require>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
   <navbar></navbar>
   <div id="chartID"> </div>
-  <!--<chart-element chart-options.bind="chartOptions"></chart-element>-->
-  <!--<div>
-  <chart-element type="pieChart" data.bind="listingCategory" id="pieChart"></chart-element>
+  <div id="pieChart"></div>
 
-  </div>-->
-
-  <canvas id="container"></canvas>
+  <div id="container"></div>
 </template>
