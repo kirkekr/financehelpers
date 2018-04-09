@@ -1,7 +1,18 @@
 import Highcharts from "highcharts";
+import environment from "../environment";
+import {HttpClient} from "aurelia-fetch-client";
 
 export class Statistics {
-  container = {
+  listingList = []
+
+  activate() {
+    let client = new HttpClient();
+
+    client.fetch(environment.url + 'listings')
+      .then(response => response.json())
+      .then(listings => this.listingList = listings);
+  }
+  /*container = {
     chart: {
       plotBackgroundColor: null,
       plotBorderWidth: null,
@@ -48,5 +59,5 @@ export class Statistics {
         y: 0.2
       }]
     }]
-  };
+  };*/
 }

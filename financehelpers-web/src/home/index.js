@@ -1,24 +1,9 @@
 import {HttpClient, json} from 'aurelia-fetch-client';
 import environment from '../environment';
 
-
-let client = new HttpClient();
-
 export class Index{
+  listingList = []
 
-listingList = []
-
-   openNew() {
-    var x = document.getElementById("demo");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-    
-    
-  }
-  
   activate() {
 			let client = new HttpClient();
 

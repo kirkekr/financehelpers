@@ -3,9 +3,19 @@
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <require from="statistics/statistics.css"></require>
   <navbar></navbar>
-  <div id="chartID"> </div>
-  <div id="pieChart"></div>
-
-  <div id="container"></div>
+  <h2>Statistics page</h2>
+  <table  id="statsTable" class="table table-hover">
+  <thead>
+  <tr class="table-primary table-active"><th scope="col">Category</th><th scope="col">Amount</th></tr>
+   </thead>
+   <tbody >
+    <tr repeat.for="listing of listingList" >
+      <td>${listing.listingCategory}</td>
+      <td>${listing.listingAmount}</td>
+    </tr>
+    </tbody>
+</table>
+<div id="container"></div>
 </template>
