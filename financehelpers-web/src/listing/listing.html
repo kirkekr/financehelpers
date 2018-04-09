@@ -12,7 +12,7 @@
     
     <div class="form-group">
       <label for="listingCategory" class="col-form-label">Category</label>
-      <select id="listingCategory" value.bind="listingData.listingCategory">
+      <select id="listingCategory" value.bind="listingData.listingCategory" class="form-control">
           <option model.bind="null">Choose...</option>
           <option repeat.for="category of categories"
                   model.bind="category">
