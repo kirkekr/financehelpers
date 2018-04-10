@@ -5,14 +5,13 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 public class EntityTest {
-    Listing testListing;
-    User testUser;
+    private Listing testListing;
+    private User testUser;
 
     private void setupListing(){
         if(testListing == null){
             testListing = new Listing();
-            new Listing().listingCategory = "food";
-
+            testListing.listingCategory ="Category";
         }
     }
 

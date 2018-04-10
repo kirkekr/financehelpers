@@ -1,8 +1,8 @@
 package ee.ttu.idk0071.financehelpers;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ListingService {
@@ -17,7 +17,7 @@ public class ListingService {
 		return listingRepository.save(listing);
 	}
 
-	List<Listing> getAllListings() {
+	public List<Listing> getAllListings() {
 		return listingRepository.findAll();
 	}
 }
