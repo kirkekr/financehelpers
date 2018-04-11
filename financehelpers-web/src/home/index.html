@@ -17,8 +17,8 @@
     <div class="entrybox right" repeat.for="listing of listingList">
       <div class="entrycontent">
         <p>${listing.transactionDate}</p>
-        <h2>${listing.listingCategory}</h2>
-        <p>${listing.listingAmount}</p>      
+        <div><h2>${listing.listingCategory}</h2> </div>
+        <p><span>amount:</span> ${listing.listingAmount} €</p>
       </div>
     </div>
   </div>
