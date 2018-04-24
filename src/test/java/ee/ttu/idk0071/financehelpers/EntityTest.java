@@ -11,7 +11,7 @@ public class EntityTest {
     private void setupListing(){
         if(testListing == null){
             testListing = new Listing();
-            testListing.listingCategory ="Category";
+            testListing.setListingCategory("Category");
         }
     }
 

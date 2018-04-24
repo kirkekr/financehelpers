@@ -1,10 +1,13 @@
 package ee.ttu.idk0071.financehelpers;
 
 import org.apache.catalina.filters.CorsFilter;
+import org.hamcrest.Matchers;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -12,11 +15,17 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(ListingController.class)
@@ -37,14 +46,14 @@ public class ListingControllerTests {
     public void setup(){
 
     testListing = new Listing();
-    testListing.id = testID;
-    testListing.listingAmount =11;
-    testListing.listingCategory ="Category";
+    testListing.setId(testID);
+    testListing.setListingAmount(11);
+    testListing.setListingCategory("Category");
 
     testListing2 = new Listing();
-    testListing2.id =testID2;
-    testListing2.listingAmount =22;
-    testListing2.listingCategory ="Category2";
+    testListing2.setId(testID2);
+    testListing2.setListingAmount(22);
+    testListing2.setListingCategory("Category2");
 
     testListArray = new ArrayList<>();
     testListArray.add(testListing);
@@ -60,10 +69,10 @@ given(listingService.getAllListings()).willReturn(testListArray);
 
 @Test
     public void getAllListingTest() throws Exception {
- /*  Mockito.when(listingService.getAllListings()).thenReturn(testListArray);
+  Mockito.when(listingService.getAllListings()).thenReturn(testListArray);
     mockMvc.perform(get("/listings", RequestMethod.GET))
             .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+           //.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$", hasSize(2)))
             .andExpect(jsonPath("$[0].id", Matchers.is(1)))
             .andExpect(jsonPath("$[0].listingAmount", Matchers.is(11)))
@@ -73,6 +82,6 @@ given(listingService.getAllListings()).willReturn(testListArray);
             .andExpect(jsonPath("$[1].listingCategory", Matchers.is("Category2")));
           Mockito.verify(listingService, Mockito.times(1)).getAllListings();
           verifyNoMoreInteractions(listingService);
-    Assert.assertEquals(listingService.getAllListings(), testListArray);*/
+    Assert.assertEquals(listingService.getAllListings(), testListArray);
 }
 }
