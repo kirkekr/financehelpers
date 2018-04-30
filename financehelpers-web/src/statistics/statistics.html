@@ -1,11 +1,13 @@
 <template>
   <require from="navbar.html"></require>
   <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/modules/exporting.js"></script>
-  <script src="https://code.highcharts.com/modules/export-data.js"></script>
   <require from="statistics/statistics.css"></require>
   <navbar></navbar>
   <h2>Statistics page</h2>
+   <form class="form-inline my-2 my-lg-0" id="statsSearch" submit.delegate="searchCategory()">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" id="categoryFilter" value.bind="searchStr"/>
+        <input class="btn btn-secondary my-2 my-sm-0" type="submit" value="Search"/>
+   </form>
   <table  id="statsTable" class="table table-hover">
   <thead>
   <tr class="table-success table-active"><th scope="col">Category</th><th scope="col">Amount</th></tr>

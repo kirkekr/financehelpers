@@ -1,11 +1,8 @@
 package ee.ttu.idk0071.financehelpers;
 
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 @RestController
 public class ListingController {
@@ -23,5 +20,10 @@ public class ListingController {
 	@RequestMapping(value="/listings", method=RequestMethod.GET)
 	public List<Listing> getAllListings(){
 		return listingService.getAllListings();
+	}
+
+	@RequestMapping(value="/stats/search/{searchStr}", method = RequestMethod.GET)
+	public List<Listing> searchCategory(@PathVariable("searchStr") String searchStr){
+		return listingService.searchByCategory(searchStr);
 	}
 }

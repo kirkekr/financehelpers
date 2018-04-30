@@ -20,4 +20,8 @@ public class ListingService {
 	public List<Listing> getAllListings() {
 		return listingRepository.findAll();
 	}
+
+    public List<Listing> searchByCategory(String searchStr) {
+    return listingRepository.findByListingCategory(searchStr);
+	}
 }
