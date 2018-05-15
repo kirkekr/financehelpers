@@ -1,10 +1,5 @@
-//import {LogManager} from 'aurelia-framework';
 export class App {
 
- /* constructor(){
-    this.logger = LogManager.getLogger('app');
-  }
-*/
   configureRouter(config, router) {
     this.router = router;
     config.title = 'Aurelia';
