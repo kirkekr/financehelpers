@@ -31,7 +31,8 @@ export class listing{
 			.then(data => {
 				console.log("Server saatis" + " " +data.listingCategory);
 		});
-    alert('Added new entry!');
+    alert('Added new entry! ' +
+      'Go to main page.');
 	}
 	
 }
