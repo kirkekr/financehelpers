@@ -7,26 +7,26 @@
 <form id="listingform" submit.delegate="addListing()">
     <div class="form-group" >
       <label for="transactionDate" class="col-form-label">Transaction date</label>
-      <input id="transactionDate" type="date" name="transactionDate" value.bind="listingData.transactionDate" class="form-control">
+      <input id="transactionDate" type="date" name="transactionDate" value.bind="listingData.transactionDate" class="form-control"
+       required min="1900-01-01">
     </div>
     
     <div class="form-group">
       <label for="listingCategory" class="col-form-label">Category</label>
-      <select id="listingCategory" value.bind="listingData.listingCategory" class="form-control">
+      <select id="listingCategory" value.bind="listingData.listingCategory" class="form-control" required>
           <option model.bind="null">Choose...</option>
           <option repeat.for="category of categories"
                   model.bind="category">
             ${category}
           </option>
         </select>
-	
-    
     </div>
     
 	<div class="form-group">
     <label for="listingAmount" class="col-form-label">Amount of listing</label>
-	  <input id="listingAmount" type="number" name="listingAmount" value.bind="listingData.listingAmount" class="form-control">
+	  <input id="listingAmount" type="number" name="listingAmount" value.bind="listingData.listingAmount" class="form-control"
+	  required max="2200-01-01">
   </div>
-	<input type="submit" name="Add listing" class="btn btn-success" >
+	<input type="submit" id="addListingBtn" name="Add listing" class="btn btn-success" >
 </form>
 </template>

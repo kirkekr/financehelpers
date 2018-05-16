@@ -72,7 +72,6 @@ given(listingService.getAllListings()).willReturn(testListArray);
   Mockito.when(listingService.getAllListings()).thenReturn(testListArray);
     mockMvc.perform(get("/listings", RequestMethod.GET))
             .andExpect(status().isOk())
-           //.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$", hasSize(2)))
             .andExpect(jsonPath("$[0].id", Matchers.is(1)))
             .andExpect(jsonPath("$[0].listingAmount", Matchers.is(11)))
