@@ -103,7 +103,7 @@ body {
 .left::before {
   content: " ";
   height: 0;
-  position: absolute;
+  position: fixed;
   top: 22px;
   width: 0;
   z-index: 1;
